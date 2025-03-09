@@ -1,0 +1,9 @@
+aws create-budget \
+--account-id $ACCOUNT_ID \
+--budget file://aws/budget.json \
+--notifications-with-subscribers file://aws/budget-Notifications.json 
+
+aws sns subscribe \
+    --topic-arn="arn:aws:sns:us-east-1:703671892312:billing-alarm" \
+    --protocol=email \
+    --notification-endpoint=williamboswell1983@gmail.com
